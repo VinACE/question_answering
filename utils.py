@@ -93,8 +93,11 @@ def build_embeddings(vocab, embedding_path="", output_path="", vec_size=50):
             for line in f:
                 values = line.split()
                 word = values[0]
-                import pdb; pdb.set_trace()
+                # import pdb; pdb.set_trace()
                 vector = np.asarray(values[1:], dtype="float32")
+                print(word)
+                print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
+                print(vector)
                 if word in vocab:
                     embedding_dict[word] = vector
 
