@@ -140,12 +140,14 @@ class SquadPreprocessor:
         # download vocabulary if not done yet
         if directory == "train":
             labels = [np.array(l.strip("\n").split(), dtype=np.int32) for l in labels]
-
+            
             word_vocab, word2idx, char_vocab, char2idx = build_vocab(directory + ".context", directory + ".question",
                                                                      "word_vocab.pkl", "word2idx.pkl", "char_vocab.pkl",
                                                                      "char2idx.pkl", is_train=is_train,
                                                                      max_words=config.max_words)
+           
             # create an embedding matrix from the vocabulary with pretrained vectors (GloVe) for words
+            import pdb; pdb.set_trace()
             build_embeddings(word_vocab, embedding_path=config.glove, output_path="word_embeddings.pkl",
                              vec_size=config.word_embedding_size)
             build_embeddings(char_vocab, embedding_path="", output_path="char_embeddings.pkl",
