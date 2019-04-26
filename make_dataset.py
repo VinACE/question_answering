@@ -147,7 +147,7 @@ class SquadPreprocessor:
                                                                      max_words=config.max_words)
            
             # create an embedding matrix from the vocabulary with pretrained vectors (GloVe) for words
-            import pdb; pdb.set_trace()
+            # import pdb; pdb.set_trace()
             build_embeddings(word_vocab, embedding_path=config.glove, output_path="word_embeddings.pkl",
                              vec_size=config.word_embedding_size)
             build_embeddings(char_vocab, embedding_path="", output_path="char_embeddings.pkl",
