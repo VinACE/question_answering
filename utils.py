@@ -96,11 +96,8 @@ def build_embeddings(vocab, embedding_path="", output_path="", vec_size=50):
                 # import pdb; pdb.set_trace()
                 try:
                     vector = np.asarray(values[1:], dtype="float32")
-                except ValueError e:
-                    print(e)
-                print(word)
-                print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-                print(vector)
+                except ValueError:
+                    print("Oops!  That was no valid number.  Try again...")
                 if word in vocab:
                     embedding_dict[word] = vector
 
