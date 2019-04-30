@@ -94,7 +94,10 @@ def build_embeddings(vocab, embedding_path="", output_path="", vec_size=50):
                 values = line.split()
                 word = values[0]
                 # import pdb; pdb.set_trace()
-                vector = np.asarray(values[1:], dtype="float32")
+                try:
+                    vector = np.asarray(values[1:], dtype="float32")
+                except ValueError, e:
+                    print(e)
                 print(word)
                 print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
                 print(vector)
