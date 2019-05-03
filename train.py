@@ -56,7 +56,7 @@ with open(os.path.join(experiment_path, "config_{}.json".format(config.exp)), "w
 writer = SummaryWriter(experiment_path)
 
 # open features file and store them in individual variables (train + dev)
-train_features = np.load(os.path.join(config.train_dir, "train_features.npz", allow_pickle=True ))
+train_features = np.load(os.path.join(config.train_dir, "train_features.npz"), allow_pickle=True)
 t_w_context, t_c_context, t_w_question, t_c_question, t_labels = train_features["context_idxs"],\
                                                                  train_features["context_char_idxs"],\
                                                                  train_features["question_idxs"],\
