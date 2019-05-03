@@ -84,7 +84,7 @@ idx2word = dict([(y, x) for x, y in word2idx.items()])
 
 # transform them into Tensors
 # word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix)).type(torch.float) # changed float32 to float
-word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix, dtype='f'))
+word_embedding_matrix = nn.Embedding.from_pretrained(word_embedding_matrix)
 char_embedding_matrix = torch.from_numpy(np.array(char_embedding_matrix)).type(torch.float)  # changed float32 to float
 
 # load datasets
