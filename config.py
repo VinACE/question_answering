@@ -10,7 +10,7 @@ dev_dir = data_dir + "dev/"
 # spacy_en = "/Users/gdamien/Data/spacy/en_core_web_sm-2.0.0/en_core_web_sm/en_core_web_sm-2.0.0"
 spacy_en = "/content/datasets/processed/SQuAD/en_core_web_sm-2.1.0"
 # glove = "/Users/gdamien/Data/glove.6B/" + "glove.6B.{}d.txt"
-glove = "/content/datasets/original/Glove/glove.840B.300d.txt"
+glove = "/home/ofsdms/san_mrc/data/glove.840B.300d.txt"
 squad_models = "output/" + exp
 
 # preprocessing values
