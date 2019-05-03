@@ -71,6 +71,7 @@ d_w_context, d_c_context, d_w_question, d_c_question, d_labels = dev_features["c
                                                                  dev_features["label"]
 
 # load the embedding matrix created for our word vocabulary
+import pdb;pdb.set_trace()
 with open(os.path.join(config.train_dir, "word_embeddings.pkl"), "rb") as e:
     word_embedding_matrix = pickle.load(e)
 with open(os.path.join(config.train_dir, "char_embeddings.pkl"), "rb") as e:
@@ -84,7 +85,7 @@ idx2word = dict([(y, x) for x, y in word2idx.items()])
 
 # transform them into Tensors
 # word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix)).type(torch.float) # changed float32 to float
-word_embedding_matrix = nn.Embedding.from_pretrained(word_embedding_matrix)
+word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix, dtype='f'))
 char_embedding_matrix = torch.from_numpy(np.array(char_embedding_matrix)).type(torch.float)  # changed float32 to float
 
 # load datasets
