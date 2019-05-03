@@ -83,8 +83,8 @@ with open(os.path.join(config.train_dir, "word2idx.pkl"), "rb") as f:
 idx2word = dict([(y, x) for x, y in word2idx.items()])
 
 # transform them into Tensors
-word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix)).type(torch.float32)
-char_embedding_matrix = torch.from_numpy(np.array(char_embedding_matrix)).type(torch.float32)
+word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix)).type(torch.float) # changed float32 to float
+char_embedding_matrix = torch.from_numpy(np.array(char_embedding_matrix)).type(torch.float)  # changed float32 to float
 
 # load datasets
 train_dataset = SquadDataset(t_w_context, t_c_context, t_w_question, t_c_question, t_labels)
