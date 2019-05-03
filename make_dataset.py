@@ -222,7 +222,7 @@ if __name__ == "__main__":
 
     maybe_download_squad(url, train_filename, config.data_dir)
     maybe_download_squad(url, dev_filename, config.data_dir)
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     p = SquadPreprocessor(config.data_dir, train_filename, dev_filename, tokenizer)
     p.preprocess()
 
