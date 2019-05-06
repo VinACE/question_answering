@@ -63,7 +63,7 @@ t_w_context, t_c_context, t_w_question, t_c_question, t_labels = train_features[
                                                                  train_features["question_char_idxs"],\
                                                                  train_features["label"]
 
-dev_features = np.load(os.path.join(config.dev_dir, "dev_features.npz"))
+dev_features = np.load(os.path.join(config.dev_dir, "dev_features.npz"), allow_pickle=True)
 d_w_context, d_c_context, d_w_question, d_c_question, d_labels = dev_features["context_idxs"],\
                                                                  dev_features["context_char_idxs"],\
                                                                  dev_features["question_idxs"],\
