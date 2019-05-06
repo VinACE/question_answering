@@ -71,7 +71,7 @@ d_w_context, d_c_context, d_w_question, d_c_question, d_labels = dev_features["c
                                                                  dev_features["label"]
 
 # load the embedding matrix created for our word vocabulary
-import pdb;pdb.set_trace()
+# import pdb;pdb.set_trace()
 with open(os.path.join(config.train_dir, "word_embeddings.pkl"), "rb") as e:
     word_embedding_matrix = pickle.load(e)
 with open(os.path.join(config.train_dir, "char_embeddings.pkl"), "rb") as e:
