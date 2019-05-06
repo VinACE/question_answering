@@ -91,8 +91,8 @@ f'work embedding matrix type'
 # print(dir(word_embedding_matrix))
 # myset = set(word_embedding_matrix)
 # print(myset)
-word_embedding_matrix = torch.from_numpy(word_embedding_matrix).float().to(device)
-word_embedding_matrix = torch.from_numpy(np.array(word_embedding_matrix)) # .float().to(device) # changed float32 to float
+# word_embedding_matrix = torch.from_numpy(word_embedding_matrix).float().to(device)
+word_embedding_matrix = torch.from_numpy(np.float32(word_embedding_matrix)) # .float().to(device) # changed float32 to float
 char_embedding_matrix = torch.from_numpy(np.array(char_embedding_matrix)).type(torch.float)  # changed float32 to float
 
 # load datasets
